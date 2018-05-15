@@ -4,7 +4,7 @@
           add_action( 'wp', array( $this, 'singular_post' ) );
        }
        public function singular_post() {
-          if ( is_singular() || is_page('blog') ) {
+          if ( is_singular() ) {
                add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_prism_scripts' ), 2 );
                add_filter( 'the_content', array( $this, 'filter_html') );
                add_filter( 'the_excerpt', array( $this, 'filter_html') );
